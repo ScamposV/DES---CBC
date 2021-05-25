@@ -10,11 +10,12 @@ import base64
 from string import Template
 from pyDes import *
 
+'''
 key = "hola1234";
 text="e";
 iv="00000002"
-
 '''
+
 #key
 key= input("Ingrese una llave de 8 caracteres: ")
 while len(key) !=8:
@@ -25,6 +26,7 @@ while len(iv) !=8:
 	iv= input("Ingrese una llave de 8 caracteres, ni más ni menos: ");
 #mensaje a cifrar
 text= input("Ingrese un mensaje: ")
+'''
 while len(text) !=28:
 	text= input("Ingrese un mensaje de 28 caracteres, ni más ni menos: ");
 '''

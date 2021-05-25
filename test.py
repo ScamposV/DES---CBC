@@ -1,20 +1,12 @@
 '''
-pyDes v2.0.1
-@author Sebastián Campos
-Bibliografías:
-https://pypi.org/project/pyDes/#description
-https://github.com/twhiteman/pyDes/blob/master/pyDes.py
-https://pycryptodome.readthedocs.io/en/latest/src/cipher/classic.html#cbc-mode
+#pyDes v2.0.1
+#@author Sebastián Campos
+#Bibliografías:
+#https://pypi.org/project/pyDes/#description
+#https://github.com/twhiteman/pyDes/blob/master/pyDes.py
 '''
-import base64
 from string import Template
 from pyDes import *
-
-'''
-key = "hola1234";
-text="e";
-iv="00000002"
-'''
 
 #key
 key= input("Ingrese una llave de 8 caracteres: ")
@@ -26,25 +18,25 @@ while len(iv) !=8:
 	iv= input("Ingrese una llave de 8 caracteres, ni más ni menos: ");
 #mensaje a cifrar
 text= input("Ingrese un mensaje: ")
-'''
-while len(text) !=28:
-	text= input("Ingrese un mensaje de 28 caracteres, ni más ni menos: ");
-'''
-
 
 keyb = bytes(key, 'Utf-8')
 iv2= bytes(iv, 'Utf-8')
+'''
+#Visualizacion de los datos anteriores, keyb, text & iv
 print("---------------------------------------------------------")
 print ("LLave: ", keyb,"\nMensaje a cifrar: ", text,"\nvector: ", iv,"\n\n")
-
+'''
 k = des(keyb, CBC, iv2, pad=None, padmode=PAD_PKCS5)
 d = k.encrypt(text)
+#hexadecimal
 e=d.hex()
 
-
+'''
+#Visualizacion de los datos encriptados y desencriptados, para probar
+#si encripta  desencripta debes quitar las comillas.
 print ("Encrypted: %r" % e)
 print ("Decrypted: %r" % k.decrypt(d, padmode=PAD_PKCS5))
-
+'''
 
 
 f = open('index.html','w')

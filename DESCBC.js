@@ -2,6 +2,7 @@
 // @name         Script cifrado
 // @namespace    http://tampermonkey.net/
 // @version      0.1
+// @updateURL    https://github.com/ScamposV/DES-CBC/blob/asd/DESCBC.js
 // @description  try to take over the world!
 // @author       You
 // @match        file:///C:/Users/Tat%C3%A1n/index.html
@@ -18,7 +19,9 @@ const mensaje = document.getElementsByClassName('DESCBC')[0].id;
 
 var iv2=CryptoJS.enc.Utf8.parse(iv1);
 
-console.log(keyHex, iv2, mensaje)
+/*
+//Visualizacion de las variables obtenidas y modificadas
+console.log(keyHex, iv2, mensaje)*/
 
 var decoded = CryptoJS.DES.decrypt(
 	{ciphertext: CryptoJS.enc.Hex.parse(document.getElementsByClassName('DESCBC')[0].id)},
